@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Auction {
+  id               Int           @id @default(autoincrement())
+  title            String
+  status           AuctionStatus @default(OPEN)
+  highestBidAmount Int?          @default(0)
+  seller           User          @relation("Seller_User", fields: [sellerId], references: [id])
+  sellerId         Int
+  highestBidder    User?         @relation("Bidder_User", fields: [highestBidderId], references: [id])
+  highestBidderId  Int?
+  createdAt        DateTime?     @default(now())
+  updatedAt        DateTime?     @default(now()) @updatedAt
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  createdAt    DateTime  @default(now())
+  SellerToUser Auction[] @relation("Seller_User")
+  BidderToUser Auction[] @relation("Bidder_User")
+}
+
+enum AuctionStatus {
+  OPEN
+  CLOSED
+}
