@@ -37,6 +37,11 @@ const handler: NextApiHandler = async (
 
   if (req.method === 'GET') {
     const auctions = await AuctionService.getAllAuctions()
+    if (!auctions) {
+      res.status(500).json({ message: 'Could not get auctions' })
+      return
+    }
+
     res.status(200).json({ data: auctions })
     return
   }
