@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": [ "node", "jest" ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,14 +20,14 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
-    }
+    },
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "./*.js",
-    "./src/**/*.js"
+    "./src/**/*.js",
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "*/**/tests", "*/**/tests/**/*",]
 }

@@ -2,7 +2,7 @@ import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import { z } from 'zod'
 import { Auction, AuctionStatus } from '@prisma/client'
 import { apiHandlerWrapper } from 'server/utils/apiHandlerWrapper'
-import { AuctionService } from 'server/services/auction'
+import { AuctionService } from 'server/services/auction/auction'
 import { ErrorResponse } from 'server/utils/types'
 
 const postSchema = z

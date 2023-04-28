@@ -1,5 +1,5 @@
 import { Prisma, Auction } from '@prisma/client';
-import { prisma } from "../prisma";
+import { prisma } from "../../prisma";
 
 export type AuctionInputModel = Pick<Auction, 'title' | 'status' | 'sellerId'>;
 
