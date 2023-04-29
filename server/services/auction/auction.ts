@@ -30,4 +30,5 @@ export const _getAllAuctions = (prismaClient: typeof prisma) => async () => {
 export const AuctionService = {
   createAuction: _createAuction(prisma),
   getAllAuctions: _getAllAuctions(prisma),
+  test: () => { console.log("dsdsd") }
 }
