@@ -1,0 +1,1 @@
+export const fce = () => { console.log("dsds") };

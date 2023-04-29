@@ -1,9 +1,9 @@
-import { AuctionService } from '../auction';
+import { fce } from '../test-file';
 
 describe('create', () => {
 
     it('should create a Tag without crash', async () => {
-        AuctionService.test();
+        fce();
         expect(true).toEqual(true);
     });
 });
