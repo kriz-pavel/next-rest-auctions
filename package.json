@@ -10,6 +10,7 @@
     "lint": "next lint",
     "ci:lint": "next lint",
     "ci:test": "jest --ci --coverage",
+    "ci:build": "next build",
     "generate": "prisma generate",
     "prisma-studio": "prisma studio",
     "db-seed": "prisma db seed",

@@ -20,5 +20,8 @@ jobs:
       - name: Run ESlint
         run: npm run ci:lint
 
+      - name: Build
+        run: npm run ci:build
+
       - name: Run tests
         run: npm run ci:test
