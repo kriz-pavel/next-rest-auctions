@@ -16,7 +16,4 @@ jobs:
         run: npm run lint
 
       - name: Run tests
-        run: npm run test
-
-      - name: Hello
-        run: echo "hello world"
+        run: npm run ci:test
