@@ -1,5 +1,13 @@
 name: CI-test
-on: [push]
+on: 
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
+  woekflow_dispatch:
+
 jobs: 
   eslint: 
     name: Lint code base
@@ -22,3 +30,6 @@ jobs:
 
       - name: Run tests
         run: npm run ci:test
+
+      - name: Build
+        run: npm run ci:build
